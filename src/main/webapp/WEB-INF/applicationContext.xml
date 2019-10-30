@@ -1,0 +1,64 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:mvc="http://www.springframework.org/schema/mvc"-->
+       <!--xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xmlns:beans="http://www.springframework.org/schema/util"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+       <!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
+       <!--http://www.springframework.org/schema/mvc-->
+	   <!--http://www.springframework.org/schema/mvc/spring-mvc.xsd-->
+	   <!--http://www.springframework.org/schema/context-->
+	   <!--http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"-->
+       <!--xmlns:c="http://www.springframework.org/schema/c">-->
+    <!--&lt;!&ndash; context:component-scan This tag will scan @Component, @Repository, @Service, @Controller-->
+            <!--and also resolves @Autowired and @Qualifier &ndash;&gt;-->
+    <!--<context:component-scan base-package="com"/>-->
+
+    <!--&lt;!&ndash;-->
+        <!--mvc:annotation-driven configures Spring MVC annotations-->
+        <!--Support for validating @Controller inputs with @Valid, if a JSR-303 Provider is present on the classpath.-->
+        <!--HttpMessageConverter support for @RequestBody method parameters and @ResponseBody method return values-->
+        <!--from @RequestMapping or @ExceptionHandler methods.-->
+     <!--&ndash;&gt;-->
+    <!--<mvc:annotation-driven/>-->
+    <!--<mvc:resources mapping="/resources/**" location="/recources/"/>-->
+
+
+    <!--<bean id="accountRealizationDAO"-->
+          <!--class="com.dao.AccountRealizationDAO">-->
+        <!--<property name="sessionFactory" ref="sessionFactory"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="hibernateSessionFactoryUtil"-->
+          <!--class="com.configuration.HibernateSessionFactoryUtil">-->
+
+    <!--</bean>-->
+
+    <!--<bean id="userRealizationDAO"-->
+          <!--class="com.dao.UserRealizationDAO">-->
+        <!--<property name="sessionFactory" ref="sessionFactory"/>-->
+    <!--</bean>-->
+
+
+    <!--<bean id="sessionFactory"-->
+          <!--factory-bean="hibernateSessionFactoryUtil"-->
+          <!--factory-method="getSessionFactory">-->
+
+    <!--</bean>-->
+
+
+
+
+    <!--&lt;!&ndash; Static Resources Configuration (get access to static sources such as CSS and JavaScript files) &ndash;&gt;-->
+   <!--&lt;!&ndash; <mvc:resources mapping="/resources/**" location="/resources/"/>&ndash;&gt;-->
+    <!--&lt;!&ndash; themes can be put in different folder such as-->
+        <!--<mvc:resources mapping="/resources/**" location="/resources/themeBlue" />-->
+        <!--<mvc:resources mapping="/resources/**" location="/resources/themeGreen" />-->
+     <!--&ndash;&gt;-->
+
+
+
+
+
+<!--</beans>-->

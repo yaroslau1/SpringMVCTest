@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.UserEntity" table="user" schema="userbanklist">
+        <id name="idUser">
+            <column name="idUser" sql-type="int(11)"/>
+        </id>
+        <property name="nameUser">
+            <column name="nameUser" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="surnameUser">
+            <column name="surnameUser" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>
