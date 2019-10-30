@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.entity.UserEntity;
+import com.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,12 +22,17 @@ public class UserRealizationDAO implements IUser {
         this.sessionFactory = sessionFactory;
     }
 
-    public List<UserEntity> selectUsers() {
+    @Override
+    public SessionFactory getBeanToBeAutowired() {
+        return sessionFactory;
+    }
+
+    public List<User> selectUsers() {
 
         return null;
     }
 
-    public void insertUsers(UserEntity usersEntity) {
+    public void insertUsers(User usersEntity) {
         Session session = sessionFactory.openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(usersEntity);
@@ -36,7 +41,7 @@ public class UserRealizationDAO implements IUser {
     }
 
 
-    public void delete(UserEntity usersEntity) {
+    public void delete(User usersEntity) {
         Session session = sessionFactory.openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(usersEntity);
@@ -45,17 +50,17 @@ public class UserRealizationDAO implements IUser {
 
     }
 
-    public UserEntity findById(int id) {
+    public User findById(int id) {
         Session session = sessionFactory.openSession();
-        UserEntity userEntity = session.get(UserEntity.class, id);
-        System.out.println(userEntity);
-        return userEntity;
+        User user = session.get(User.class, id);
+        System.out.println(user);
+        return user;
     }
 
 
-    public List<UserEntity> findByName(String name) {
+    public List<User> findByName(String name) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("FROM UserEntity where nameUser=:name");
+        Query query = session.createQuery("FROM User where name=:name");
         query.setParameter("name", name);
         List results = query.list();
 
@@ -64,18 +69,15 @@ public class UserRealizationDAO implements IUser {
     }
 
 
-
-
-    public List<UserEntity> findBySurname(String surname) {
+    public List<User> findBySurname(String surname) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("FROM UserEntity where surnameUser=:surname");
+        Query query = session.createQuery("FROM User where sureName=:surname");
         query.setParameter("surname", surname);
         List results = query.list();
 
 
         return results;
     }
-
 
 
     public SessionFactory getSessionFactory() {

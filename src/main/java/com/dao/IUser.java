@@ -1,14 +1,16 @@
 package com.dao;
 
-import com.entity.UserEntity;
+import com.entity.User;
+import org.hibernate.SessionFactory;
 
 import java.util.List;
 
 public interface IUser {
 
-    List<UserEntity> selectUsers();
-    void insertUsers(UserEntity usersEntity);
-    UserEntity findById(int id);
-    List<UserEntity> findByName( String  name);
-    List<UserEntity> findBySurname(String surname);
+    SessionFactory getBeanToBeAutowired();
+    List<User> selectUsers();
+    void insertUsers(User usersEntity);
+    User findById(int id);
+    List<User> findByName(String  name);
+    List<User> findBySurname(String surname);
 }

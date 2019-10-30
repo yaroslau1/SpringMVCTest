@@ -1,14 +1,15 @@
 package com.dao;
 
-import com.entity.AccountEntity;
+import com.entity.Account;
+import org.hibernate.SessionFactory;
 
 import java.util.List;
-import java.util.Map;
 
 public interface IAccount {
-    List<AccountEntity> selectUsers();
-    void insertUsers(AccountEntity accountEntity );
-    void  delete(AccountEntity  accountEntity );
+    SessionFactory getBeanToBeAutowired();
+    List<Account> selectUsers();
+    void insertUsers(Account accountEntity );
+    void  delete(Account accountEntity );
     List<Integer>findBySum();
     List<Integer> findById( );
 
