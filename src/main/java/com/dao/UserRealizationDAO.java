@@ -6,13 +6,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("userRealizationDAO")
+
 @Transactional
+@Repository
 public class UserRealizationDAO implements IUser {
     @Autowired
     private SessionFactory sessionFactory;
