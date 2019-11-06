@@ -1,6 +1,12 @@
 package com.config;
 
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
 public class MvcWebApplicationInitializer
         extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -22,4 +28,16 @@ public class MvcWebApplicationInitializer
         return new String[] { "/" };
     }
 
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
+        webCtx.register(WebMvcConfig.class);
+        webCtx.setServletContext(servletContext);
+
+
+        ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(webCtx));
+        servlet.setLoadOnStartup(1);
+        servlet.addMapping("/");
+        servlet.setAsyncSupported(true);
+    }
 }
