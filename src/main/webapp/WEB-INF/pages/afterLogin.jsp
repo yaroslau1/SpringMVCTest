@@ -19,5 +19,6 @@
 <form action="/logout" method="post">
     <input value="Logout" type="submit">
 </form>
+<a href="index.jsp">index</a>
 </body>
 </html>

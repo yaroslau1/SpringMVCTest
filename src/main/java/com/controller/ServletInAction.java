@@ -33,7 +33,7 @@ public class ServletInAction {
 //
 //    }
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/index")
     public  String getPage(Model model){
         return "index";
     }

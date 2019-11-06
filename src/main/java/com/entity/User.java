@@ -16,10 +16,18 @@ public class User {
     @Column
     private String sureName;
 
-    public User(int idUser, String nameUser, String surnameUser) {
+    @Column
+    private String role;
+
+    @Column
+    private String password;
+
+    public User(int idUser, String nameUser, String surnameUser, String role, String password) {
         this.userid = idUser;
         this.name = nameUser;
         this.sureName = surnameUser;
+        this.role = role;
+        this.password = password;
     }
 
     public User() {
@@ -48,6 +56,22 @@ public class User {
 
     public void setSurnameUser(String surnameUser) {
         this.sureName = surnameUser;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

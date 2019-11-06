@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Transactional
 @Repository
+@Component
 public class UserRealizationDAO implements IUser {
     @Autowired
     private SessionFactory sessionFactory;
@@ -65,8 +67,6 @@ public class UserRealizationDAO implements IUser {
         Query query = session.createQuery("FROM User where name=:name");
         query.setParameter("name", name);
         List results = query.list();
-
-
         return results;
     }
 
