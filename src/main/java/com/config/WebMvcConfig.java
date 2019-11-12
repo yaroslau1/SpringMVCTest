@@ -29,12 +29,17 @@ import java.util.Properties;
 @PropertySource("classpath:hibernate.properties")
 public class WebMvcConfig implements WebMvcConfigurer {
 
+    @Override
+    public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+        configurer.setDefaultTimeout(30*1000L);
+    }
+
     @Autowired
     Environment environment;
 
     @Override
     public  void addResourceHandlers(ResourceHandlerRegistry registry){
-        registry.addResourceHandler("/WEB-INF/pages/**").addResourceLocations("/pages/");
+        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 
     @Override

@@ -38,6 +38,11 @@ public class ServletInAction {
         return "index";
     }
 
+    @RequestMapping(value = "/test")
+    public  String getTestPage(Model model){
+        return "test";
+    }
+
     @RequestMapping (value = "/richest",method=RequestMethod.GET)
     public String richestUser(Model model) {
         List<Integer> sum= new ArrayList<>();

@@ -29,6 +29,11 @@ public class MvcWebApplicationInitializer
     }
 
     @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        registration.setAsyncSupported(true);
+    }
+
+    /* @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
         webCtx.register(WebMvcConfig.class);
@@ -39,5 +44,5 @@ public class MvcWebApplicationInitializer
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
         servlet.setAsyncSupported(true);
-    }
+    }*/
 }
